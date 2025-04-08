@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пётр Зуев - Профессиональный руководитель в образовании</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 32px;
+            height: calc(100% - 32px);
+            width: 2px;
+            background: #3b82f6;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6, #6366f1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-blue-600"></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">Обо мне</a>
+                    <a href="#competencies" class="text-gray-700 hover:text-blue-600 transition">Компетенции</a>
+                    <a href="#achievements" class="text-gray-700 hover:text-blue-600 transition">Достижения</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Опыт</a>
+                    <a href="#contact"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Связаться</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" , stroke-linejoin="round" , stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white pb-4 px-4 shadow-md">
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600 transition">Обо мне</a>
+            <a href="#competencies" class="block py-2 text-gray-700 hover:text-blue-600 transition">Компетенции</a>
+            <a href="#achievements" class="block py-2 text-gray-700 hover:text-blue-600 transition">Достижения</a>
+            <a href="#experience" class="block py-2 text-gray-700 hover:text-blue-600 transition">Опыт</a>
+            <a href="#contact"
+                class="block mt-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition text-center">Связаться</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-50 to-indigo-50 py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Петр Зуев</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-blue-600 mb-6">Учитель, методист, руководитель
+                        образовательных организаций</h2>
+                    <p class="text-lg text-gray-600 mb-8">15 лет опыта в управлении образованием, цифровизации и
+                        разработке инновационных методик преподавания</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-center font-medium transition">Связаться</a>
+                        <a href="#achievements"
+                            class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md text-center font-medium transition">Мои
+                            достижения</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="bg-white p-6 rounded-xl shadow-lg max-w-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-graduation-cap text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Эксперт в цифровизации</h3>
+                                <p class="text-gray-600 text-sm">Разработка образовательных платформ и методик</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-area-chart text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Учитель информатики</h3>
+                                <p class="text-gray-600 text-sm">Обучение инфноматике, программированию и первые шаги в
+                                    профессию</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-users text-indigo-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Обучил 1000+ педагогов</h3>
+                                <p class="text-gray-600 text-sm">Цифровые и инженерные технологии</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-trophy text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Лауреат премии Москвы</h3>
+                                <p class="text-gray-600 text-sm">В области образования</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">Обо мне</h2>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-blue-500 mr-3"></i>
+                            <span>Москва, Россия</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-envelope text-blue-500 mr-3"></i>
+                            <span>zuevpu@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-500 mr-3"></i>
+                            <span>+7 (917) 544-76-40</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-lg mb-6">Профессиональный руководитель и педагог с 15-летним опытом в образовании.
+                        Специализируюсь на цифровизации, предпрофессиональном образовании, разработке образовательных
+                        платформ, курсов и методических материалов.</p>
+                    <p class="text-lg mb-6">Создал и возглавлял инновационную "Цифровую школу" с нуля, разработал
+                        авторские методики преподавания информатики, внедрил современные цифровые инструменты в
+                        образовательный процесс.</p>
+                    <p class="text-lg">Общий стаж преподавания информатики — 15 лет, включая непрерывную методическую и
+                        исследовательскую деятельность. Создал и внедрил собственные учебные пособия, рабочие программы
+                        и цифровые тренажёры.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goal Section 
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 gradient-text">Про цифру</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto"></p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-lightbulb text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Инновации в образовании</h3>
+                    <p class="text-gray-600">Реализация авторских подходов к обучению и внедрение цифровых инструментов нового поколения</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="bg-indigo-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chalkboard-teacher text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Методическое лидерство</h3>
+                    <p class="text-gray-600">Применение управленческого, педагогического и методического опыта для развития ОО</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="bg-purple-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Цифровая трансформация</h3>
+                    <p class="text-gray-600">Создание современной образовательной среды с использованием цифровых технологий</p>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Competencies Section -->
+    <section id="competencies" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 gradient-text">Ключевые компетенции</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Профессиональные навыки и направления экспертизы</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-blue-200 transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-school text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Управление ОУ</h3>
+                    <p class="text-gray-600 text-sm">Полный цикл управления образовательным учреждением</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-blue-200 transition">
+                    <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-laptop-code text-indigo-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Авторские методики</h3>
+                    <p class="text-gray-600 text-sm">Преподавание информатики и программирования.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-blue-200 transition">
+                    <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-chalkboard text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Образовательные платформы</h3>
+                    <p class="text-gray-600 text-sm">Проектирование и реализация курсов и платформ</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-blue-200 transition">
+                    <div class="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-pink-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Методсопровождение</h3>
+                    <p class="text-gray-600 text-sm">Поддержка и обучение педагогического состава</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-blue-200 transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-desktop text-blue-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Цифровизация</h3>
+                    <p class="text-gray-600 text-sm">МЭШ, LMS, онлайн-курсы и цифровая среда</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-blue-200 transition">
+                    <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tasks text-indigo-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Организация процесса</h3>
+                    <p class="text-gray-600 text-sm">Модернизация учебного процесса</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-blue-200 transition">
+                    <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user-tie text-purple-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">HR в образовании</h3>
+                    <p class="text-gray-600 text-sm">Подбор и обучение персонала</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-100 hover:border-blue-200 transition">
+                    <div class="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-file-alt text-pink-600"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Нормативная база</h3>
+                    <p class="text-gray-600 text-sm">Разработка документации и Устава ОО</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 gradient-text">Мои достижения</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ключевые проекты, награды и реализованные инициативы
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-trophy text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Премии и награды</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <div
+                                class="bg-blue-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-medal text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Лауреат премии города Москвы</h4>
+                                <p class="text-gray-600 text-sm">2021 год, в области образования</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div
+                                class="bg-blue-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-flag text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Победитель конкурса "Флагманы образования"</h4>
+                                <p class="text-gray-600 text-sm">2021 год, всероссийский конкурс</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-project-diagram text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Реализованные проекты</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <div
+                                class="bg-indigo-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-laptop text-indigo-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">"Цифровой репетитор"</h4>
+                                <p class="text-gray-600 text-sm">Инновационная система поддержки обучения</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div
+                                class="bg-indigo-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-robot text-indigo-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">"Инженерные классы", "IT-классы"</h4>
+                                <p class="text-gray-600 text-sm">Предпрофессиональное образование</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div
+                                class="bg-indigo-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-cube text-indigo-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">"Робо-класс", "IT-полигон"</h4>
+                                <p class="text-gray-600 text-sm">Практико-ориентированное обучение</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-book-open text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Авторские курсы</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <div
+                                class="bg-purple-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-robot text-purple-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Робототехника</h4>
+                                <p class="text-gray-600 text-sm">Для школьников и педагогов</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div
+                                class="bg-purple-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-code text-purple-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Программирование</h4>
+                                <p class="text-gray-600 text-sm">Разные уровни сложности</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div
+                                class="bg-purple-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-cube text-purple-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">3D-моделирование</h4>
+                                <p class="text-gray-600 text-sm">Практическое применение</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-pink-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-chart-line text-pink-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Методические разработки</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <div
+                                class="bg-pink-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-laptop-house text-pink-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Методики для МЭШ</h4>
+                                <p class="text-gray-600 text-sm">Внедрение в образовательный процесс</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div
+                                class="bg-pink-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-comments text-pink-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Проект «Разговоры о важном»</h4>
+                                <p class="text-gray-600 text-sm">Методическое сопровождение</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div
+                                class="bg-pink-50 w-8 h-8 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-users text-pink-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Обучено 1000+ педагогов</h4>
+                                <p class="text-gray-600 text-sm">Цифровые и инженерные технологии</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 gradient-text">Профессиональный опыт</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ключевые позиции и достижения в карьере</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8">
+
+                    <!-- Experience Item 1 -->
+                    <div class="relative timeline-item pl-12">
+                        <div
+                            class="absolute left-0 top-0 bg-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Руководитель управления цифрового обучения</h3>
+                                <span
+                                    class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Сейчас</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-blue-600 mb-3">АНО Центр знаний «Машук»</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Разработка и реализация стратегии цифрового обучения</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Кураторство онлайн-курсов, цифровых программ и учебных платформ проекта
+                                        «Цифровой Машук»</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Создание и сопровождение контента для платформы: методические материалы,
+                                        цифровые модули, кейсы и тесты</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Анализ образовательных данных и разработка рекомендаций по персонализации
+                                        обучения</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 1 -->
+                    <div class="relative timeline-item pl-12">
+                        <div
+                            class="absolute left-0 top-0 bg-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Директор, учитель информатики и программирования</h3>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">2020
+                                    – 2024</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-blue-600 mb-3">ГБОУ «Цифровая школа», Москва</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Руководство инновационной школой, созданной с нуля — от формирования концепции
+                                        до статуса городской площадки</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Разработка корпоративного стиля, Устава и локальной нормативной базы</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Организация системы дополнительного образования, в том числе внебюджетных и
+                                        выездных форматов</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Внедрение цифровых решений в управление и обучение, координация работы
+                                        педагогического состава</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="relative timeline-item pl-12">
+                        <div
+                            class="absolute left-0 top-0 bg-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Старший методист</h3>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">2015
+                                    – 2024</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-blue-600 mb-3">ГМЦ ДОНМ, Москва</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Методическая помощь педагогам</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Создание авторских методических рекомендаций и программ</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Разработка и запуск онлайн-курсов</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Апробация и сопровождение электронного контента</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 3 -->
+                    <div class="relative timeline-item pl-12">
+                        <div
+                            class="absolute left-0 top-0 bg-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Преподаватель информатики</h3>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">2011
+                                    – 2015</span>
+                            </div>
+                            <h4 class="text-lg font-medium text-blue-600 mb-3">Кадетская школа-интернат «1-й МКК»,
+                                Москва</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Преподавание информатики по авторским программам</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Разработка и внедрение учебных пособий, рабочей документации</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Использование ИКТ, цифровых платформ и симуляторов</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-2">•</span>
+                                    <span>Подготовка обучающихся к олимпиадам и проектной деятельности</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 gradient-text">Образование</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Базовое образование и профессиональная переподготовка
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-university text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">МГПУ</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2">Информатика и вычислительная техника</p>
+                        <p class="text-gray-500 text-sm">2009–2013</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-graduation-cap text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">ГАОУ ВО МГПУ</h3>
+                        </div>
+                        <p class="text-gray-600 mb-2">Профпереподготовка: Менеджмент в образовании</p>
+                        <p class="text-gray-500 text-sm">2015</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 gradient-text">Навыки и инструменты</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Профессиональные компетенции и владение технологиями
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <i class="fas fa-chalkboard-teacher text-blue-500 mr-3"></i>
+                            Педагогические навыки
+                        </h3>
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Авторская педагогика</span>
+                                    <span class="text-gray-600">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Методическое проектирование</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Олимпиадная подготовка</span>
+                                    <span class="text-gray-600">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <i class="fas fa-laptop-code text-indigo-500 mr-3"></i>
+                            Технологические навыки
+                        </h3>
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Образовательные платформы</span>
+                                    <span class="text-gray-600">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Цифровой контент</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">МЭШ и LMS системы</span>
+                                    <span class="text-gray-600">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <i class="fas fa-users text-purple-500 mr-3"></i>
+                            Управленческие навыки
+                        </h3>
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Командообразование</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">HR в образовании</span>
+                                    <span class="text-gray-600">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Финансовая грамотность</span>
+                                    <span class="text-gray-600">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <i class="fas fa-comments text-pink-500 mr-3"></i>
+                            Коммуникативные навыки
+                        </h3>
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Деловая коммуникация</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Публичные выступления</span>
+                                    <span class="text-gray-600">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Управление инновациями</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+        <div class="max-w-12xl mx-auto px-4 sm:px-12 lg:px-8">
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-1 gap-8">
+                    <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                        <h3 class="text-xl font-semibold mb-6">Контактная информация</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div
+                                    class="bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm opacity-80">Email</p>
+                                    <p class="font-medium">zuevpu@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div
+                                    class="bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm opacity-80">Телефон</p>
+                                    <p class="font-medium">+7 (917) 544-76-40</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm opacity-80">Telegram</p>
+                                    <p class="font-medium">
+                                        <a href="https://t.me/ZUEVPU" target="_blank" class="text-white-500 hover:underline">@zuevpu</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div
+                                    class="bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm opacity-80">Локация</p>
+                                    <p class="font-medium">Москва, Россия</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
